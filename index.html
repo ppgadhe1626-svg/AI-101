@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI 101 — Prompt to App</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <div class="brand">
+    <span class="mark">AI 101</span>
+    <h1>Prompt&nbsp;→&nbsp;App</h1>
+  </div>
+  <div class="sub">natural language in · working web app out</div>
+</header>
+
+<main>
+  <section class="console">
+    <div>
+      <label for="prompt">Describe the app</label>
+      <textarea id="prompt" placeholder="e.g. a pomodoro timer with a circular progress ring and session log"></textarea>
+    </div>
+
+    <div class="examples" id="examples">
+      <span class="chip">expense tracker with charts</span>
+      <span class="chip">markdown notes app</span>
+      <span class="chip">flashcard quiz app</span>
+      <span class="chip">unit converter</span>
+      <span class="chip">kanban board</span>
+    </div>
+
+    <button class="generate" id="genBtn">Generate app</button>
+
+    <div>
+      <label>Build log</label>
+      <div class="log" id="log">idle — describe an app and generate.</div>
+    </div>
+
+    <div class="history" id="history"></div>
+  </section>
+
+  <section class="stage">
+    <div class="toolbar">
+      <span class="status-dot" id="statusDot"></span>
+      <span id="statusText">no app built yet</span>
+      <button id="downloadBtn" style="display:none;">Download .html</button>
+    </div>
+    <div class="tabs" id="tabs" style="display:none;">
+      <div class="tab active" data-tab="preview">Preview</div>
+      <div class="tab" data-tab="code">Code</div>
+    </div>
+    <div class="view" id="view">
+      <div class="empty" id="emptyState">
+        <div class="glyph">▢</div>
+        <div>your generated app will render here</div>
+      </div>
+      <iframe id="previewFrame"></iframe>
+      <pre id="codeView"></pre>
+    </div>
+  </section>
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>
